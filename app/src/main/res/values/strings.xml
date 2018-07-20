@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AndroidMvvmSample</string>
+    <string name="hint_name">Full Name</string>
+    <string name="hint_number">Mobile Number</string>
+    <string name="hint_email">Email Address</string>
+    <string name="action_save">Save</string>
+    <string name="action_add">Add</string>
+</resources>
