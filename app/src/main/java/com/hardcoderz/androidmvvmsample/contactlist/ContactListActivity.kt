@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import com.hardcoderz.androidmvvmsample.R
 import com.hardcoderz.androidmvvmsample.addcontact.AddContactActivity
 import com.hardcoderz.androidmvvmsample.models.Contact
@@ -34,7 +35,10 @@ class ContactListActivity : AppCompatActivity() {
 
     private fun subscribeUi() {
         viewModel.getContactList().observe(this, Observer<List<Contact>> { contacts ->
-            if (contacts != null) contactAdapter.updateData(contacts)
+            if (contacts != null) {
+                emptyDataLabel.visibility = if (contacts.isEmpty()) View.VISIBLE else View.GONE
+                contactAdapter.updateData(contacts)
+            }
         })
     }
 
