@@ -10,16 +10,6 @@ import com.hardcoderz.androidmvvmsample.repositories.ContactRepository
 
 class ContactListViewModel(app: Application) : AndroidViewModel(app) {
 
-    private var database: AppDatabase? = AppDatabase.getInstance(getApplication())
-    private var observableContacts = MediatorLiveData<List<Contact>>()
+    // TODO: Implement ContactListViewModel
 
-    fun getContactList(): LiveData<List<Contact>> = observableContacts
-
-    init {
-        val db = database
-        if (db != null) {
-            val contactRepo = ContactRepository(db)
-            observableContacts.addSource(contactRepo.getContacts(), observableContacts::setValue)
-        }
-    }
 }
